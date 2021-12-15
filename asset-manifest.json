@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/audio2/static/css/main.59a5d83d.chunk.css",
+    "main.css": "/audio2/static/css/main.a12be46c.chunk.css",
     "main.js": "/audio2/static/js/main.f5126770.chunk.js",
     "main.js.map": "/audio2/static/js/main.f5126770.chunk.js.map",
     "runtime-main.js": "/audio2/static/js/runtime-main.ef929641.js",
@@ -8,7 +8,7 @@
     "static/js/2.034821e0.chunk.js": "/audio2/static/js/2.034821e0.chunk.js",
     "static/js/2.034821e0.chunk.js.map": "/audio2/static/js/2.034821e0.chunk.js.map",
     "index.html": "/audio2/index.html",
-    "static/css/main.59a5d83d.chunk.css.map": "/audio2/static/css/main.59a5d83d.chunk.css.map",
+    "static/css/main.a12be46c.chunk.css.map": "/audio2/static/css/main.a12be46c.chunk.css.map",
     "static/js/2.034821e0.chunk.js.LICENSE.txt": "/audio2/static/js/2.034821e0.chunk.js.LICENSE.txt",
     "static/media/20210424_105226_180_radiohistory_ep0516.8d1306e4.mp3": "/audio2/static/media/20210424_105226_180_radiohistory_ep0516.8d1306e4.mp3",
     "static/media/20210424_105237_279_radiohistory_ep0517.b513b552.mp3": "/audio2/static/media/20210424_105237_279_radiohistory_ep0517.b513b552.mp3",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.ef929641.js",
     "static/js/2.034821e0.chunk.js",
-    "static/css/main.59a5d83d.chunk.css",
+    "static/css/main.a12be46c.chunk.css",
     "static/js/main.f5126770.chunk.js"
   ]
 }
