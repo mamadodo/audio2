@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.59a5d83d.chunk.css",
-    "main.js": "/static/js/main.60c15228.chunk.js",
-    "main.js.map": "/static/js/main.60c15228.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.1e635901.js",
-    "runtime-main.js.map": "/static/js/runtime-main.1e635901.js.map",
-    "static/js/2.034821e0.chunk.js": "/static/js/2.034821e0.chunk.js",
-    "static/js/2.034821e0.chunk.js.map": "/static/js/2.034821e0.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.59a5d83d.chunk.css.map": "/static/css/main.59a5d83d.chunk.css.map",
-    "static/js/2.034821e0.chunk.js.LICENSE.txt": "/static/js/2.034821e0.chunk.js.LICENSE.txt",
-    "static/media/20210424_105226_180_radiohistory_ep0516.8d1306e4.mp3": "/static/media/20210424_105226_180_radiohistory_ep0516.8d1306e4.mp3",
-    "static/media/20210424_105237_279_radiohistory_ep0517.b513b552.mp3": "/static/media/20210424_105237_279_radiohistory_ep0517.b513b552.mp3",
-    "static/media/20210430_113621_533_radiohistory_ep0518.ca72e8b5.mp3": "/static/media/20210430_113621_533_radiohistory_ep0518.ca72e8b5.mp3",
-    "static/media/20210806_102244_222_radiohistory_ep0544.c5856041.mp3": "/static/media/20210806_102244_222_radiohistory_ep0544.c5856041.mp3",
-    "static/media/radireki_thumbnail.264ebb1a.jpeg": "/static/media/radireki_thumbnail.264ebb1a.jpeg"
+    "main.css": "/audio2/static/css/main.59a5d83d.chunk.css",
+    "main.js": "/audio2/static/js/main.f5126770.chunk.js",
+    "main.js.map": "/audio2/static/js/main.f5126770.chunk.js.map",
+    "runtime-main.js": "/audio2/static/js/runtime-main.ef929641.js",
+    "runtime-main.js.map": "/audio2/static/js/runtime-main.ef929641.js.map",
+    "static/js/2.034821e0.chunk.js": "/audio2/static/js/2.034821e0.chunk.js",
+    "static/js/2.034821e0.chunk.js.map": "/audio2/static/js/2.034821e0.chunk.js.map",
+    "index.html": "/audio2/index.html",
+    "static/css/main.59a5d83d.chunk.css.map": "/audio2/static/css/main.59a5d83d.chunk.css.map",
+    "static/js/2.034821e0.chunk.js.LICENSE.txt": "/audio2/static/js/2.034821e0.chunk.js.LICENSE.txt",
+    "static/media/20210424_105226_180_radiohistory_ep0516.8d1306e4.mp3": "/audio2/static/media/20210424_105226_180_radiohistory_ep0516.8d1306e4.mp3",
+    "static/media/20210424_105237_279_radiohistory_ep0517.b513b552.mp3": "/audio2/static/media/20210424_105237_279_radiohistory_ep0517.b513b552.mp3",
+    "static/media/20210430_113621_533_radiohistory_ep0518.ca72e8b5.mp3": "/audio2/static/media/20210430_113621_533_radiohistory_ep0518.ca72e8b5.mp3",
+    "static/media/20210806_102244_222_radiohistory_ep0544.c5856041.mp3": "/audio2/static/media/20210806_102244_222_radiohistory_ep0544.c5856041.mp3",
+    "static/media/radireki_thumbnail.264ebb1a.jpeg": "/audio2/static/media/radireki_thumbnail.264ebb1a.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1e635901.js",
+    "static/js/runtime-main.ef929641.js",
     "static/js/2.034821e0.chunk.js",
     "static/css/main.59a5d83d.chunk.css",
-    "static/js/main.60c15228.chunk.js"
+    "static/js/main.f5126770.chunk.js"
   ]
 }
