@@ -1,12 +1,12 @@
 import React from "react";
-import { AudioPlayer } from "./components/AudioPlayer";
+import { ProgramList } from "./components/ProgramList";
 import "./App.css";
 
 export const App = () => {
 
   return (
-    <AudioPlayer>
+    <ProgramList>
 
-    </AudioPlayer>
+    </ProgramList>
   );
 };

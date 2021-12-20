@@ -32,8 +32,12 @@ body {
 }
 
 #app {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	width: 70%;
-  margin: 30px auto;
+  margin: 0 auto;
 	border-bottom: 2px solid #f6f6f6;
 }
 
@@ -472,7 +476,7 @@ body {
 
 /* ph1 css */
 .allContents-list {
-  display: flex;
+	display: flex;
 	width: 80%;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -486,13 +490,8 @@ body {
   background: #ffffff;
   margin-bottom: 16px;
 	list-style: none;
-	cursor: pointer;
-	transition: 0.4s;
 }
 
-.contentItem:hover {
-	opacity: 0.7;
-}
 
 .contentItem::after {
   content: '';
@@ -551,11 +550,12 @@ body {
   width: 60px;
 }
 .contentItem .content-linkItem {
-  display: flex;
-  width: 24px;
+  /* display: flex; */
+  /* width: 24px; */
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
+
 }
 
 .contentItem.listContent .content-linkItem {
@@ -566,6 +566,8 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   color: #c22c46;
+	border: 1px solid #c22c46;
+	padding: 10px;
 }
 
 .contentItem .content-linkItem .material-icons {
@@ -615,4 +617,73 @@ body {
   transition: opacity 0.4s;
   padding-top: 16px;
   text-align: center;
+}
+
+.contentItem .addBtn {
+	width: fit-content;
+	height: 38px;
+	border-radius: 19px;
+	background: #c22c46;
+	color: #fff;
+	padding: 0 10px;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.contentItem .addBtn:hover {
+	opacity: 0.7;
+}
+
+.contentItem .addBtn span {
+	height: 100%;
+	line-height: 38px;
+}
+
+
+/* playlist */
+.playlists {
+	width: 60%;
+	margin-bottom: 100px;
+}
+
+.playlists-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+}
+
+.playlists-item h2 {
+	width: 60%;
+	font-size: 14px;
+	line-height: 1.2;
+	margin: 0;
+}
+
+.playlists-item .content-inner2 {
+	font-size: 12px;
+	color: #777777;
+}
+
+.playlists-item .playBtn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 1.2rem;
+	color: #c22c46;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+.playlists-item .playBtn:hover {
+	opacity: 0.7;
+}
+
+.playlist-sec {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.program {
+	width: 80%;
+	margin: 200px auto 30px;
 }
