@@ -11,6 +11,8 @@ export const ProgramList = () => {
   console.log(tracks);
   const {trackIndex} = useContext(TrackContext);
   console.log('trackIndex=' + trackIndex);
+
+
   // add playlist
   const onClickAdd = (e) => {
     const newTracks = [...tracks, programs[e.currentTarget.id]];

@@ -12,6 +12,7 @@ export const programs = [
     thumbnail: episodeImg,
     epiNum: "epi544",
     duration: 1247,
+    playing: false,
   },
   {
     src: episode2,
@@ -20,6 +21,7 @@ export const programs = [
     thumbnail: episodeImg,
     epiNum: "epi518",
     duration: 911,
+    playing: false,
   },
   {
     src: episode3,
@@ -28,6 +30,7 @@ export const programs = [
     thumbnail: episodeImg,
     epiNum: "epi517",
     duration: 952,
+    playing: false,
   },
   {
     src: episode4,
@@ -36,5 +39,6 @@ export const programs = [
     thumbnail: episodeImg,
     epiNum: "epi516",
     duration: 1115,
+    playing: false,
   }
 ];

@@ -8,6 +8,7 @@ export const TrackProvider = (props) => {
   const intervalRef = useRef(null);
   const [trackIndex, setTrackIndex] = useState(0);
   const [isPlay, setIsPlay] = useState(false); // playing state
+  // const [isPlayCurrent, setIsPlayCurrent] = useState(false);
 
   return (
     <TrackContext.Provider
@@ -16,7 +17,8 @@ export const TrackProvider = (props) => {
         trackIndex, 
         setTrackIndex,
         isPlay,
-        setIsPlay }}>
+        setIsPlay,
+       }}>
       {children}
     </TrackContext.Provider>
   );

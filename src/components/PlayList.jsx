@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { TrackContext } from "../providers/TrackProvider";
 
 
@@ -6,6 +6,8 @@ export const PlayList = (props) => {
   const { tracks, setTracks } = props;
   const { intervalRef, trackIndex, setTrackIndex, isPlay, setIsPlay } = useContext(TrackContext);
   console.log(tracks);
+
+  const [isPlayCurrent, setIsPlayCurrent] = useState(tracks[trackIndex].playing);
 
   // delete playlist
   const onClickDeleteEpisode = (e) => {
@@ -21,6 +23,10 @@ export const PlayList = (props) => {
     if (isPlay) {
       console.log("isPlay-true");
       setIsPlay(false); //pause
+      setIsPlayCurrent(false);
+      const prevTrack = tracks[trackIndex];
+      console.log('stop-track ' + prevTrack);
+      prevTrack.playing = false;
       
         // console.log('別トラック');
         // const newTrackIndex = e.currentTarget.id
@@ -34,13 +40,17 @@ export const PlayList = (props) => {
       console.log('currentTarget-id=' + e.currentTarget.id);
       setTrackIndex(e.currentTarget.id);
       setIsPlay(true);
+      setIsPlayCurrent(true);
+      const currentTrack = tracks[e.currentTarget.id];
+      console.log('play track ' + currentTrack);
+      currentTrack.playing = true;
     }
   };
 
-  const changeTrack = () => {
-    console.log('new trackIndex = ' + trackIndex);
-    setIsPlay(true);
-  };
+  // const changeTrack = () => {
+  //   console.log('new trackIndex = ' + trackIndex);
+  //   setIsPlay(true);
+  // };
 
 
   
@@ -59,9 +69,9 @@ export const PlayList = (props) => {
           <span className="time">{musicTime(track.duration)}</span> */}
         </div>
         <div className="content-listItem playBtn" onClick={onClickTrack} id={index}>
-          {isPlay? 
-              (<span>再生中</span>) :
-              (<span className="material-icons ico-listen">play_circle_outline</span>)
+          {track.playing === false ? 
+              (<span className="material-icons ico-listen">play_circle_outline</span>) :
+              (<span>再生中</span>)
           }
           {/* {isPlay? 
             (this === trackIndex?
