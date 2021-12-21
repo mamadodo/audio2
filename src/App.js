@@ -1,12 +1,15 @@
 import React from "react";
 import { ProgramList } from "./components/ProgramList";
+import { TrackProvider } from "./providers/TrackProvider";
 import "./App.css";
 
 export const App = () => {
 
   return (
-    <ProgramList>
+    <TrackProvider>
+      <ProgramList>
 
-    </ProgramList>
+      </ProgramList>
+    </TrackProvider>
   );
 };
