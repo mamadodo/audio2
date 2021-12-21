@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/audio2/static/css/main.f5495795.chunk.css",
-    "main.js": "/audio2/static/js/main.927fdd66.chunk.js",
-    "main.js.map": "/audio2/static/js/main.927fdd66.chunk.js.map",
+    "main.js": "/audio2/static/js/main.a600686c.chunk.js",
+    "main.js.map": "/audio2/static/js/main.a600686c.chunk.js.map",
     "runtime-main.js": "/audio2/static/js/runtime-main.ef929641.js",
     "runtime-main.js.map": "/audio2/static/js/runtime-main.ef929641.js.map",
     "static/js/2.5f137e39.chunk.js": "/audio2/static/js/2.5f137e39.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.ef929641.js",
     "static/js/2.5f137e39.chunk.js",
     "static/css/main.f5495795.chunk.css",
-    "static/js/main.927fdd66.chunk.js"
+    "static/js/main.a600686c.chunk.js"
   ]
 }
