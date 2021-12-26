@@ -8,26 +8,26 @@ import { TrackContext } from "../providers/TrackProvider";
 
 export const ProgramList = () => {
   const [tracks, setTracks] = useState([]);
-  console.log(tracks);
+  // console.log(tracks);
   const {trackIndex} = useContext(TrackContext);
-  console.log('trackIndex=' + trackIndex);
+  // console.log('trackIndex=' + trackIndex);
 
 
   // add playlist
   const onClickAdd = (e) => {
     const newTracks = [...tracks, programs[e.currentTarget.id]];
     setTracks(newTracks);
-    console.log(tracks);
-    console.log(newTracks);
+    // console.log(tracks);
+    // console.log(newTracks);
   };
 
             
-  useEffect(() => {
-    const dTimer = setTimeout(() => {
-      console.log(tracks);
-    }, 500);
-    return () => clearTimeout(dTimer);
-  },);
+  // useEffect(() => {
+  //   const dTimer = setTimeout(() => {
+  //     console.log(tracks);
+  //   }, 500);
+  //   return () => clearTimeout(dTimer);
+  // },);
 
   return (
     <>

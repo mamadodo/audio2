@@ -12,9 +12,7 @@ export const AudioPlayer = (props) => {
   useEffect(() => {
     setTrackIndex(0);
   }, []);
-  console.log(trackIndex);
-  
-  
+    
   const { title, date, duration, thumbnail, epiNum } = tracks[trackIndex];
   
   const trackSrc = tracks[trackIndex].src;
@@ -23,10 +21,7 @@ export const AudioPlayer = (props) => {
 
   const musicCurrentTime = musicRef.current.currentTime;
   const musicRate = (Math.floor(musicCurrentTime / tracks[trackIndex].duration * 100));
-  console.log(musicRate);
-
-  // const [isPlay, setIsPlay] = useState(false); // playing state
-  // console.log('isPlay ' + isPlay);
+ 
   const [timePosition, setTimePosition] = useState(0); // time position
 
   const speed = [1.0, 1.3, 1.5, 2.0, 0.5, 0.7];
@@ -49,13 +44,12 @@ export const AudioPlayer = (props) => {
     
     intervalRef.current = setInterval(() => {
       if (musicRef.current.ended) {
-        console.log('nextTrack実行');
+        console.log('☆☆ nextTrack実行 ');
         nextTrack();
       } else {
       setTimePosition(musicRef.current.currentTime);
-      console.log(isPlay);
-      console.log(musicRef.current.currentTime);
-      console.log('再生トラック' + trackIndex);
+      // console.log(' 再生トラック/経過時間 ');
+      // console.log('trackIndex ' + trackIndex + ' / ' + musicRef.current.currentTime);
       }
     }, [1000]);
   };
@@ -69,10 +63,10 @@ export const AudioPlayer = (props) => {
     if(isPlay) {
       musicRef.current.play();
       start();
-      console.log('start');
+      console.log('☆☆ track' + trackIndex + ' start ');
     } else {
       musicRef.current.pause();
-      console.log('pause');
+      console.log('☆☆ track' + trackIndex + ' pause ');
       if (intervalRef.current === null) {
         return;
       }
@@ -89,10 +83,15 @@ export const AudioPlayer = (props) => {
   const onClickTogglePlay = () => {
     if (isPlay) {
       setIsPlay(!isPlay);
-      console.log(isPlay);
+      const playingTrack = tracks[trackIndex];
+      playingTrack.playing = false;
+      // console.log('isPlay change ' + isPlay);
     } else {
       setIsPlay(!isPlay);
-      console.log(isPlay);
+      const playingTrack = tracks[trackIndex];
+      playingTrack.playing = true;
+
+      // console.log('!isPlay change ' + isPlay);
     }
   }
 
@@ -113,8 +112,9 @@ export const AudioPlayer = (props) => {
   const onClickTime = (e) => {
     timeBarWidth = e.target.getBoundingClientRect().width;
     timeBarX = e.nativeEvent.offsetX;
-    console.log(e.target.getBoundingClientRect().width);
-    console.log(e.nativeEvent.offsetX);
+    console.log(' timeBarクリック ');
+    // console.log(e.target.getBoundingClientRect().width);
+    // console.log(e.nativeEvent.offsetX);
     musicRef.current.currentTime = (timeBarX / timeBarWidth * tracks[trackIndex].duration);
   }
 
@@ -140,17 +140,21 @@ export const AudioPlayer = (props) => {
   const nextTrack = () => {
     if(isPlay) {
       setIsPlay(false);
-      console.log(isPlay);
+      const playingTrack = tracks[trackIndex];
+      playingTrack.playing = false;
       if (trackIndex < tracks.length - 1) {
-        console.log( '再生トラック' + trackIndex);
-        setTrackIndex(Number(trackIndex) + 1); // 数値変換（なぜ？）
+        // setTrackIndex(Number(trackIndex) + 1); // 数値変換
+        setTrackIndex((currentIndex) => Number(currentIndex) + 1);
+        const nextTrack = tracks[trackIndex + 1];
+        // console.log(nextTrack);
+        nextTrack.playing = true;
       } else {
         setTrackIndex(0);
         console.log("最初のトラックに戻る");
+        const nextTrack = tracks[0];
+        nextTrack.playing = true;
       }
       setIsPlay(true);
-      console.log("次のトラック" + trackIndex);
-      console.log(isPlay);
     }
   };
 

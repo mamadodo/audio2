@@ -5,55 +5,51 @@ import { TrackContext } from "../providers/TrackProvider";
 export const PlayList = (props) => {
   const { tracks, setTracks } = props;
   const { intervalRef, trackIndex, setTrackIndex, isPlay, setIsPlay } = useContext(TrackContext);
-  console.log(tracks);
-
-  const [isPlayCurrent, setIsPlayCurrent] = useState(tracks[trackIndex].playing);
 
   // delete playlist
   const onClickDeleteEpisode = (e) => {
-    // console.log(index);
-    console.log(e.currentTarget.id);
     const newtracks = [...tracks];
     newtracks.splice(e.currentTarget.id, 1);
     setTracks(newtracks);
   }
   
   const onClickTrack = (e) => {
-    console.log("トラックbuttonクリック");
+    // console.log(typeof e.currentTarget.id);
+    console.log("☆ trackボタンクリック");
+    const newIndex = e.currentTarget.id;
+
     if (isPlay) {
-      console.log("isPlay-true");
-      setIsPlay(false); //pause
-      setIsPlayCurrent(false);
-      const prevTrack = tracks[trackIndex];
-      console.log('stop-track ' + prevTrack);
-      prevTrack.playing = false;
+      // 再生中のトラックを停止
+      // console.log("isPlay-true");
+      const changeTrack = async () => {
+        await new Promise((resolve) => {
+          setIsPlay(false); //pause
+          setTimeout(() => {
+            resolve(console.log('500'));
+          }, 500);
+          const prevTrack = tracks[trackIndex];
+          prevTrack.playing = false;
+        });
+        const currentTrack = tracks[newIndex];
+        currentTrack.playing = true;
+        console.log(currentTrack);
+        console.log('別トラック');
+        console.log('newIndex =' + newIndex);
+        setTrackIndex(newIndex);
+        console.log(trackIndex);
+        setIsPlay(true);
+      }
+      changeTrack();
       
-        // console.log('別トラック');
-        // const newTrackIndex = e.currentTarget.id
-        // setTrackIndex(newTrackIndex);
-        // changeTrack();
-        // // console.log('new TrackIndex = ' + trackIndex);
-        // setIsPlay(true);        
-    
     } else {
-      console.log("isPlay-false");
-      console.log('currentTarget-id=' + e.currentTarget.id);
       setTrackIndex(e.currentTarget.id);
       setIsPlay(true);
-      setIsPlayCurrent(true);
       const currentTrack = tracks[e.currentTarget.id];
-      console.log('play track ' + currentTrack);
+      // console.log('play track ' + currentTrack);
       currentTrack.playing = true;
     }
   };
 
-  // const changeTrack = () => {
-  //   console.log('new trackIndex = ' + trackIndex);
-  //   setIsPlay(true);
-  // };
-
-
-  
   return (
     <>
     <ul className="playlists">
@@ -73,11 +69,6 @@ export const PlayList = (props) => {
               (<span className="material-icons ico-listen">play_circle_outline</span>) :
               (<span>再生中</span>)
           }
-          {/* {isPlay? 
-            (this === trackIndex?
-              (<span>再生中</span>) :
-              (<span className="material-icons ico-listen">play_circle_outline</span>)
-          ) : (<span className="material-icons ico-listen">play_circle_outline</span>)} */}
         </div>
         <div className="content-listItem playBtn" onClick={onClickDeleteEpisode} id={index}>
             <span className="material-icons ico-listen">delete</span>
