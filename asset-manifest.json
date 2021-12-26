@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/audio2/static/css/main.f5495795.chunk.css",
-    "main.js": "/audio2/static/js/main.0973ac66.chunk.js",
-    "main.js.map": "/audio2/static/js/main.0973ac66.chunk.js.map",
+    "main.js": "/audio2/static/js/main.ddbc3937.chunk.js",
+    "main.js.map": "/audio2/static/js/main.ddbc3937.chunk.js.map",
     "runtime-main.js": "/audio2/static/js/runtime-main.ef929641.js",
     "runtime-main.js.map": "/audio2/static/js/runtime-main.ef929641.js.map",
-    "static/js/2.5f137e39.chunk.js": "/audio2/static/js/2.5f137e39.chunk.js",
-    "static/js/2.5f137e39.chunk.js.map": "/audio2/static/js/2.5f137e39.chunk.js.map",
+    "static/js/2.c9278522.chunk.js": "/audio2/static/js/2.c9278522.chunk.js",
+    "static/js/2.c9278522.chunk.js.map": "/audio2/static/js/2.c9278522.chunk.js.map",
     "index.html": "/audio2/index.html",
     "static/css/main.f5495795.chunk.css.map": "/audio2/static/css/main.f5495795.chunk.css.map",
-    "static/js/2.5f137e39.chunk.js.LICENSE.txt": "/audio2/static/js/2.5f137e39.chunk.js.LICENSE.txt",
+    "static/js/2.c9278522.chunk.js.LICENSE.txt": "/audio2/static/js/2.c9278522.chunk.js.LICENSE.txt",
     "static/media/20210424_105226_180_radiohistory_ep0516.8d1306e4.mp3": "/audio2/static/media/20210424_105226_180_radiohistory_ep0516.8d1306e4.mp3",
     "static/media/20210424_105237_279_radiohistory_ep0517.b513b552.mp3": "/audio2/static/media/20210424_105237_279_radiohistory_ep0517.b513b552.mp3",
     "static/media/20210430_113621_533_radiohistory_ep0518.ca72e8b5.mp3": "/audio2/static/media/20210430_113621_533_radiohistory_ep0518.ca72e8b5.mp3",
@@ -18,8 +18,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ef929641.js",
-    "static/js/2.5f137e39.chunk.js",
+    "static/js/2.c9278522.chunk.js",
     "static/css/main.f5495795.chunk.css",
-    "static/js/main.0973ac66.chunk.js"
+    "static/js/main.ddbc3937.chunk.js"
   ]
 }
