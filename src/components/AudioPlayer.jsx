@@ -44,7 +44,7 @@ export const AudioPlayer = (props) => {
     
     intervalRef.current = setInterval(() => {
       if (musicRef.current.ended) {
-        console.log('☆☆ nextTrack実行 ');
+        console.log('nextTrack実行 ');
         nextTrack();
       } else {
       setTimePosition(musicRef.current.currentTime);
@@ -63,10 +63,10 @@ export const AudioPlayer = (props) => {
     if(isPlay) {
       musicRef.current.play();
       start();
-      console.log('☆☆ track' + trackIndex + ' start ');
+      console.log('track' + trackIndex + ' start ');
     } else {
       musicRef.current.pause();
-      console.log('☆☆ track' + trackIndex + ' pause ');
+      console.log('track' + trackIndex + ' pause ');
       if (intervalRef.current === null) {
         return;
       }
@@ -97,13 +97,13 @@ export const AudioPlayer = (props) => {
 
   // prev 15s
   const onClickBack = () => {
-    console.log("playback");
+    console.log("15s playback");
     musicRef.current.currentTime -= 15;
   }
   
   // next 30s
   const onClickSkip = () => {
-    console.log("playskip");
+    console.log("30s playskip");
     musicRef.current.currentTime += 30;
   }
 
@@ -112,7 +112,7 @@ export const AudioPlayer = (props) => {
   const onClickTime = (e) => {
     timeBarWidth = e.target.getBoundingClientRect().width;
     timeBarX = e.nativeEvent.offsetX;
-    console.log(' timeBarクリック ');
+    console.log('timeBarクリック: ' + timeBarX / timeBarWidth * tracks[trackIndex].duration + '');
     // console.log(e.target.getBoundingClientRect().width);
     // console.log(e.nativeEvent.offsetX);
     musicRef.current.currentTime = (timeBarX / timeBarWidth * tracks[trackIndex].duration);
@@ -138,19 +138,16 @@ export const AudioPlayer = (props) => {
 
 // next Track
   const nextTrack = () => {
-    if(isPlay) {
+    if(isPlay) { // 次のトラック
       setIsPlay(false);
       const playingTrack = tracks[trackIndex];
       playingTrack.playing = false;
       if (trackIndex < tracks.length - 1) {
-        // setTrackIndex(Number(trackIndex) + 1); // 数値変換
         setTrackIndex((currentIndex) => Number(currentIndex) + 1);
         const nextTrack = tracks[trackIndex + 1];
-        // console.log(nextTrack);
         nextTrack.playing = true;
-      } else {
+      } else { // 最初のトラックに戻る
         setTrackIndex(0);
-        console.log("最初のトラックに戻る");
         const nextTrack = tracks[0];
         nextTrack.playing = true;
       }

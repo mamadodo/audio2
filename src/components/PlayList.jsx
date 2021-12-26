@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { TrackContext } from "../providers/TrackProvider";
 
 
 export const PlayList = (props) => {
   const { tracks, setTracks } = props;
-  const { intervalRef, trackIndex, setTrackIndex, isPlay, setIsPlay } = useContext(TrackContext);
+  const { trackIndex, setTrackIndex, isPlay, setIsPlay } = useContext(TrackContext);
 
   // delete playlist
   const onClickDeleteEpisode = (e) => {
@@ -15,37 +15,40 @@ export const PlayList = (props) => {
   
   const onClickTrack = (e) => {
     // console.log(typeof e.currentTarget.id);
-    console.log("☆ trackボタンクリック");
+    console.log("trackボタンクリック");
     const newIndex = e.currentTarget.id;
 
     if (isPlay) {
-      // 再生中のトラックを停止
-      // console.log("isPlay-true");
-      const changeTrack = async () => {
-        await new Promise((resolve) => {
-          setIsPlay(false); //pause
-          setTimeout(() => {
-            resolve(console.log('500'));
-          }, 500);
-          const prevTrack = tracks[trackIndex];
-          prevTrack.playing = false;
-        });
-        const currentTrack = tracks[newIndex];
-        currentTrack.playing = true;
-        console.log(currentTrack);
-        console.log('別トラック');
-        console.log('newIndex =' + newIndex);
-        setTrackIndex(newIndex);
-        console.log(trackIndex);
-        setIsPlay(true);
+      if (newIndex !== trackIndex) { // 別のトラックをクリック
+        // 再生中のトラックを停止
+        const changeTrack = async () => {
+          await new Promise((resolve) => {
+            setIsPlay(false); //pause
+            setTimeout(() => {
+              resolve(1);
+            }, 300);
+            const prevTrack = tracks[trackIndex];
+            prevTrack.playing = false;
+          });
+          // クリックしたトラックを再生
+          const currentTrack = tracks[newIndex];
+          currentTrack.playing = true;
+          // console.log(currentTrack);
+          console.log('次のトラック: ' + newIndex);
+          setTrackIndex(newIndex);
+          setIsPlay(true);
+        }
+        changeTrack();
+      } else { // 再生中のトラックをクリック
+        // 再生中のトラックを停止
+        setIsPlay(false); //pause
+        const prevTrack = tracks[trackIndex];
+        prevTrack.playing = false;
       }
-      changeTrack();
-      
     } else {
       setTrackIndex(e.currentTarget.id);
       setIsPlay(true);
       const currentTrack = tracks[e.currentTarget.id];
-      // console.log('play track ' + currentTrack);
       currentTrack.playing = true;
     }
   };
